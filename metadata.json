@@ -1,0 +1,6 @@
+{
+  "name": "HIKMA — Grow Your Wisdom",
+  "description": "Rooted in Culture. Growing for the Future. An interactive life-skills tree connecting Emirati cultural heritage with seven practical life skills for children ages 8–12.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

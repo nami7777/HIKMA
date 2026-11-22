@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', 'Noto Sans Arabic', system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', 'Noto Sans Arabic', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #F4F8FB;
+    color: #16212E;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Gentle organic tree animations respecting reduced-motion */
+@keyframes leaf-sway {
+  0%, 100% {
+    transform: rotate(-1.8deg) scale(1);
+  }
+  50% {
+    transform: rotate(2.2deg) scale(1.03);
+  }
+}
+
+@keyframes cloud-drift {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(18px);
+  }
+}
+
+@keyframes blossom-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 1;
+  }
+}
+
+.animate-leaf-sway {
+  animation: leaf-sway 4.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.animate-cloud-slow {
+  animation: cloud-drift 18s ease-in-out infinite;
+}
+
+.animate-blossom {
+  animation: blossom-glow 3.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-leaf-sway,
+  .animate-cloud-slow,
+  .animate-blossom {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
